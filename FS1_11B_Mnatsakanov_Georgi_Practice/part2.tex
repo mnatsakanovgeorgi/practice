@@ -1,0 +1,282 @@
+% ---------------------------- Problem 1----------------------------------
+\subsubsection*{\center Задача № 1.}
+{\bf Условие:~}
+Дана последовательность $\{a_n\} = \dfrac{1-2n^2}{n^2+3}$ и число $c=-{2}$. Доказать, что 
+$$\lim\limits_{n\rightarrow\infty}a_n=c,$$
+а именно, для каждого сколь угодно малого числа $\eps>0$ найти наименьшее натуральное число 
+$N=N(\eps)$ такое, что $|a_n-c|<\eps$ для всех номеров $n>N(\eps)$.
+Заполнить таблицу
+\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		$\eps$ &  $0{,}1$ & $0{,}01$ & $0{,}001$ \\
+		\hline
+		$N(\eps)$ & & & \\
+		\hline
+	\end{tabular}
+\end{center}
+{\bf Решение.~}	
+Найдем предел последовательности $a_n = \dfrac{1-2n^2}{n^2+3}$
+$$
+\lim\limits_{n\rightarrow\infty}\dfrac{1-2n^2}{n^2+3}=\lim\limits_{n\rightarrow\infty}\dfrac{\dfrac{1}{n^2}-2}{1+\dfrac{3}{n^2}}=-{2}
+$$
+\hspace{1cm}
+\vspace{0.5cm}
+Что и требовалось доказать.\\
+\hspace{0.7cm}
+Рассмотрим неравенство |$a_n-c|<\eps,\,\forall\eps>0$, учитывая выражение для $a_n$ и значение $c$ из условия варианта,
+получим
+$$
+\biggl|\frac{1-2n^2}{n^2+3}+2\biggl|<\eps
+$$
+Неравенство запишем в виде двойного неравентсва и приведём выражение под знаком модуля к общему знаменателю,
+получим
+$$
+-\eps < \frac{7}{n^2+3} < \eps
+$$
+Заметим, что левое нераенство выполнено для любого номера $n\in\mathbb{N}$, поэтому будем рассматривать только правое неравенство
+$$
+ \frac{7}{n^2+3} <\eps
+$$
+Выполнив цепочку преобразований, перепишем неравенство относительно $n^2$, и учитывая, что $n\in\mathbb{N}$, получим
+$$
+\begin{array}{c}
+\dfrac{7}{n^2+3} < \eps,                               \\[8pt]
+n^2+3 > \dfrac{7}{\eps}, 						       \\[8pt]
+n^2 > \dfrac{7-3\eps}{\eps}                            \\[8pt]
+n > \sqrt{\,\dfrac{7-3\eps}{\eps}}, 		            \\[8pt]
+N(\eps) = \Biggl[\,\sqrt{\,\dfrac{7-3\eps}{\eps}}\,\Biggr],
+\end{array}
+$$
+где $[\phantom{a}]$ --- целая часть числа. \\
+$$
+\begin{array}
+$N$(0,1) = \Biggl[\,\sqrt{\,\dfrac{7-0,3}{0,1}}\,\Biggr]=8;\\[8pt] \\
+$N$(0,01) = \Biggl[\,\sqrt{\,\dfrac{7-0,03}{0,01}}\,\Biggr]=26;\\[8pt]\\
+$N$(0,001) = \Biggl[\,\sqrt{\,\dfrac{7-0,003}{0,001}}\,\Biggr]=83;\\[8pt]
+\end{array}
+$$
+Заполним таблицу:
+\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		$\eps$ &  $0{,}1$ & $0{,}01$ & $0{,}001$ \\
+		\hline
+		$N(\eps)$ & 8 & 26 & 83 \\
+		\hline
+	\end{tabular}
+\end{center}
+\textbf{Проверка:}
+$$
+\begin{array}{l}
+|a_9 - c| = \dfrac{7}{84} < 0{,}1,			\\[10pt]
+|a_{27} - c| = \dfrac{7}{732} < 0{,}01,	\\[10pt]
+|a_{84} - c| = \dfrac{7}{7059} < 0{,}001.
+\end{array}
+$$
+
+% ---------------------------- Problem 2----------------------------------
+\subsubsection*{\center Задача № 2.}
+{\bf Условие:~}
+Вычислить пределы функций
+$$
+\begin{array}{cc}
+\text{\bf(а):} & \lim\limits_{x\rightarrow3}\dfrac{3x^3-81}{x^2-5x+6}
+\\[10pt]
+\text{\bf(б):} & \lim\limits_{x\rightarrow\infty}\dfrac{\sqrt{9x^4+3}-\sqrt[3]{x^6+1}}{x^2+100x}},
+\\[10pt]
+\text{\bf(в):} & \lim\limits_{x\rightarrow-{1}}\dfrac{\sqrt{x+2}-1}{x^3+1},\\[10pt]
+\text{\bf(г):} & \lim\limits_{x\rightarrow3}\biggl(\dfrac{6-x}{3}\biggr)^{\tg{\frac{\pi{x}}{6},
+\\[10pt]
+\text{\bf(д):} & \lim\limits_{x\rightarrow0+}\biggl(\arctg\dfrac{x+1}{x^2+2x}\biggr)^{\frac{\sqrt[3]{x+1}-1}{x},
+\\[10pt]
+\text{\bf(е):} & \lim\limits_{x\rightarrow2\pi}\dfrac{\sin{7x}-\sin{3x}}{e^{x^2}-e^{4\pi^2}}.
+\end{array}
+$$
+{\bf Решение.~}\\
+\text{\bf(а):}
+$$
+\begin{array}{l}
+\lim\limits_{x\rightarrow3}\dfrac{3x^3-81}{x^2-5x+6} = \biggl[\,\dfrac{0}{0}\biggl]\,=
+\lim\limits_{x\rightarrow3}\dfrac{3(x-3)(x^2+3x+9)}{(x-3)(x-2)} = 
+\lim\limits_{x\rightarrow3}\dfrac{3(x^2+3x+9)}{(x-2)} = 
+\dfrac{3\cdot27}{1} = 81.
+\end{array}
+$$	
+\text{\bf(б):}
+$$
+\begin{array}{l}
+\lim\limits_{x\rightarrow\infty}\dfrac{\sqrt{9x^4+3}-\sqrt[3]{x^6+1}}{x^2+100x}} =\biggl[\,\dfrac{\infty-\infty}{\infty}\biggl]\,=
+\lim\limits_{x\rightarrow\infty}\dfrac{x^2\biggl(\sqrt{9+\dfrac{3}{x^4}}-\sqrt[3]{1+\dfrac{1}{x^6}}\biggl)}{x^2\biggl(1+\dfrac{100}{x}\biggl)}} = \\ 
+=\lim\limits_{x\rightarrow\infty}\dfrac{\sqrt{9+\dfrac{3}{x^4}}-\sqrt[3]{1+\dfrac{1}{x^6}}}{1+\dfrac{100}{x}}} =
+\dfrac{3-1}{1}=2
+\end{array}
+$$	
+\text{\bf(в):}
+$$
+\begin{array}{l}
+\lim\limits_{x\rightarrow-{1}}\dfrac{\sqrt{x+2}-1}{x^3+1} =\biggl[\,\dfrac{0}{0}\biggl]\,=
+\Biggl|
+\begin{array}{l}
+t = x + 1 \\ t\rightarrow0 \\ x=t-1
+\end{array}
+\Biggl| = 
+\lim\limits_{t\rightarrow0}\dfrac{\sqrt{t+1}-1}{(t-1)^3+1}  = 
+\biggl|
+\begin{array}{l}
+(1-t)^{\frac12} \sim \frac12t 
+\end{array}
+\biggr| = \\
+=\lim\limits_{t\rightarrow0}\dfrac{\frac12t}{(t^3-3t^2+3t-1+1}=\lim\limits_{t\rightarrow0}\dfrac{\frac12t}{t(t^2-3t+3)}=\lim\limits_{t\rightarrow0}\dfrac{1}{2(t^2-3t+3)}=\dfrac{1}{2\cdot3}=\dfrac16
+\end{array}
+$$               
+\text{\bf(г):}	
+$$
+\begin{array}{l}
+\lim\limits_{x\rightarrow3}\biggl(\dfrac{6-x}{3}\biggr)^{\tg{\frac{\pi{x}}{6}}} = \biggl[\,{1}^{\infty}\biggl]\,=
+\lim\limits_{x\rightarrow3}{e^\biggl\ln{\biggl(\dfrac{6-x}{3}\biggr)^{\tg{\frac{\pi{x}}{6}}}}}=
+\lim\limits_{x\rightarrow3}{e^{\tg{\frac{\pi{x}}{6}}\cdot\ln{(\frac{6-x}{3})}}}=
+\Biggl|
+\begin{array}{l}
+t = x - 3 \\ t\rightarrow0\\ x=t+3
+\end{array}
+\Biggl| =\\ \\
+\lim\limits_{t\rightarrow0}{\biggl{e}^{\biggl-\ctg{\dfrac{\pi{t}}{6}}\cdot\biggl\ln{\dfrac{3-t}{3}}}}=
+\biggl{e}^{\lim\limits_{t\rightarrow0}{\biggl{-\ctg}{\dfrac{\pi{t}}{6}}\cdot\biggl\ln{\biggl1-\dfrac{t}{3}}}}=
+\Biggl|
+\begin{array}{l}
+\biggl\ln{\biggl(\biggl1-\dfrac{t}{3}\biggl)} \sim -\dfrac{t}{3}\\
+\biggl\ctg}{\dfrac{\pi{t}}{6}}=\dfrac{1}{\biggl{\tg}{\dfrac{\pi{t}}{6}}} \sim \dfrac{1}{\dfrac{\pi{t}}{6}}}=\dfrac{6}{\pi{t}}}}
+\end{array}
+\Biggl| =\\
+\biggl{e}^{\lim\limits_{t\rightarrow0}{-\dfrac{6}{\pi{t}}\cdot\biggl(-\dfrac{t}{3}\biggl)}}=\Biggl{e}^{\dfrac{2}{\pi}}}
+\end{array}
+$$
+\text{\bf(д):}
+$$
+\begin{array}{l}
+\lim\limits_{x\rightarrow0+}\biggl(\arctg\dfrac{x+1}{x^2+2x}\biggr)^{\frac{\sqrt[3]{x+1}-1}{x}} = \lim\limits_{x\rightarrow0+}\biggl(\arctg\dfrac{1+\dfrac{1}{x}}{x+2}\biggr)^{\frac{\sqrt[3]{x+1}-1}{x}}=
+\biggl(\dfrac{\pi}{2}\biggr)^{\lim\limits_{x\rightarrow0+}{\frac{\sqrt[3]{x+1}-1}{x}}} =
+\Biggl|
+\begin{array}{l}
+{\frac{\sqrt[3]{x+1}-1}{x}} \sim \dfrac{1}{3}x
+\end{array}
+\Biggl| = \\
+=\biggl(\dfrac{\pi}{2}\biggr)^{\lim\limits_{x\rightarrow0+}{\dfrac{\frac{1}{3}x}{x}}}=
+\sqrt[3]{\,\dfrac{\pi}{2}}.
+\end{array}
+$$
+\text{\bf(е):}
+$$
+\begin{array}{l}
+\lim\limits_{x\rightarrow2\pi}\dfrac{\sin{7x}-\sin{3x}}{e^{x^2}-e^{4\pi^2}} = 
+\Biggl|
+\begin{array}{ll}
+t = x - 2\pi 	\\ 
+t\rightarrow0 \\
+x = t + 2\pi \\
+\end{array}
+\Biggr| =
+\lim\limits_{t\rightarrow0}\dfrac{\sin{(7(t + 2\pi))}-\sin{(3(t + 2\pi))}}{e^{(t + 2\pi)^2}-e^{4\pi^2}} = \\ \\
+=\lim\limits_{t\rightarrow0}\dfrac{\sin{7t}-\sin{3t}}{e^{4\pi^2}\cdot (e^{t^2+4t\pi}-1)}=\biggl[\,\dfrac{0}{0}\biggl]\,
+=\lim\limits_{t\rightarrow0}\dfrac{2\cdot \sin{2t} \cdot \cos{5t}}{e^{4\pi^2}\cdot (e^{t^2+4t\pi}-1)}
+= \biggl|
+\begin{array}{l}
+e^{t^2+4t\pi}-1 \sim t^2+4t\pi 	\\ \\
+\sin(2t) \sim 2t
+\end{array}
+\biggl| =\\ \\
+=\lim\limits_{t\rightarrow0}\dfrac{2\cdot {2t} }{e^{4\pi^2}\cdot t\cdot{(t+4\pi)}}
+=\dfrac{2 \cdot 2}{e^{4\pi^2} \cdot  4\pi} = \dfrac{1}\pi \cdot {e^{4\pi^2}}
+\end{array}
+$$ \\ \\
+\text{\bfОтвет:}
+$$
+\begin{array}{c  c  c  c  c  c}
+\text{\bf{а) }}81{;}&
+\text{\bf{б) }}{2}{;}&
+\text{\bf{в) }}\dfrac{1}{6}{;}&
+\text{\bf{в) }}\biggl{e}^{\dfrac{2}{\pi}}}{;}&
+\text{\bf{д) }}\sqrt[3]{\,\dfrac{\pi}{2}}{;}&
+\text{\bf{е) }} \dfrac{1}\pi \cdot {e^{4\pi^2}}.
+\end{array}
+$$
+% ---------------------------- Problem 3----------------------------------
+\subsubsection*{\center Задача № 3.}
+{\bf Условие:~}\\
+\text{\bf(а):} Показать, что данные функции
+$f(x)$ и $g(x)$ являются бесконечно малыми или бесконечно большими
+при указанном стремлении аргумента. \\
+\text{\bf(б):} Для каждой функции $f(x)$ и $g(x)$ записать главную часть
+(эквивалентную ей функцию)  вида $C(x-x_0)^{\alpha}$ при $x\rightarrow x_0$ или $Cx^{\alpha}$
+при $x\rightarrow\infty$, указать их порядки малости (роста). \\
+\text{\bf(в):} Сравнить функции $f(x)$ и $g(x)$ при указанном стремлении.
+\begin{center}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		№ варианта & функции $f(x)$ и $g(x)$ & стремление \\[6pt]
+		\hline
+		13 & $f(x) =\sqrt{x+\sqrt{x}}} ,~g(x)=\dfrac{\sqrt[3]{x}}{e^{\frac{1}{\sqrt{x}}}-1}$ & $x\rightarrow{+}\infty$ \\
+		\hline
+	\end{tabular}
+\end{center}
+{\bf Решение.~}\\
+\text{\bf(а):}~Покажем, что $f(x)$ и $g(x)$ бесконечно большие функции,
+$$
+\begin{array}{cc}
+\lim\limits_{x\rightarrow{+}\infty}f(x) = \lim\limits_{x\rightarrow\infty}\sqrt{x+\sqrt{x}}} = \infty \implies f(x) - \text{Б/б при }  x\rightarrow{+}\infty \\ \\
+\lim\limits_{x\rightarrow{+}\infty}g(x) = \lim\limits_{x\rightarrow{+}\infty}\dfrac{\sqrt[3]{x}}{e^{\frac{1}{\sqrt{x}}}-1} = 
+\biggl|
+e^{\frac{1}{\sqrt{x}}}-1 \sim \frac{1}{\sqrt{x}}
+\biggl|=
+ \lim\limits_{x\rightarrow{+}\infty}\dfrac{\sqrt[3]{x}}{\frac{1}{\sqrt{x}}}=
+\lim\limits_{x\rightarrow{+}\infty}{\sqrt[6]{x^5}}  = \infty \implies \\ \\\implies g(x) - \text{Б/б при }  x\rightarrow{+}\infty
+\end{array}
+$$	
+\text{\bf(б):}~Так как $f(x)$ и $g(x)$ бесконечно большие функции, то эквивалентными им будут функции вида 
+$Cx^{\alpha}$ при $x\rightarrow{+}\infty$. 
+\\Найдём эквивалентную для $f(x)$ из условия
+$$
+\lim\limits_{x\rightarrow{+}\infty}\dfrac{f(x)}{x^{\alpha}} = C,
+$$
+где $C$ --- некоторая константа. Рассмотрим предел
+$$
+\lim\limits_{x\rightarrow{+}\infty}\dfrac{f(x)}{x^{\alpha}} = \\
+\lim\limits_{x\rightarrow{+}\infty}\dfrac{\sqrt{x+\sqrt{x}}}{x^{\alpha}} =
+\lim\limits_{x\rightarrow{+}\infty}\dfrac{\sqrt{x}\cdot\sqrt{1+\dfrac{1}{\sqrt{x}}}}{x^{\alpha}}.
+$$
+При $\alpha=\dfrac{1}{2}$ последний предел равен $1$, отсюда $C=1$ и 
+$$
+f(x)\sim \sqrt{x}~\text{при}~ x\rightarrow{+}\infty.
+$$
+\begin{center}
+{Порядок роста функции $f(x)$  равен $ {\dfrac{1}{2}}$ }\\
+\end{center}
+Аналогично, рассмотрим предел
+$$
+\lim\limits_{x\rightarrow{+}\infty}\dfrac{g(x)}{x^{\alpha}} = 
+\lim\limits_{x\rightarrowv{+}\infty}\dfrac{\sqrt[3]{x}}{x^{\alpha}(e^{\frac{1}{\sqrt{x}}}-1)}=
+\biggl|
+e^{\frac{1}{\sqrt{x}}}-1 \sim \frac{1}{\sqrt{x}}
+\biggl|=
+\lim\limits_{x\rightarrow{+}\infty}\dfrac{\sqrt[3]{x}}{x^{\alpha}\cdot{\dfrac{1}{\sqrt[3]{x}}}} =
+\lim\limits_{x\rightarrow{+}\infty}\dfrac{\sqrt[6]{x^5}}{x^{\alpha}}.
+$$
+При $\alpha=\dfrac{5}{6}$ последний предел равен $1$, отсюда $C=1$ и
+$$
+g(x)\sim \sqrt[6]{x^5}~\text{при}~x\rightarrow{+}\infty.
+$$
+\begin{center}
+{Порядок роста функции $g(x)$  равен $ {\dfrac{5}{6}}$ }\\
+\end{center}
+\text{\bf(в):}~Для сравнения функций $f(x)$ и $g(x)$ рассмотрим предел их отношения при указанном стремлении
+$$
+\lim\limits_{x\rightarrow{+}\infty}\dfrac{f(x)}{g(x)}.
+$$
+Заменим  исходные функции на эквивалентные, определенные в пункте (б), получим
+$$
+\lim\limits_{x\rightarrow{+}\infty}\dfrac{f(x)}{g(x)} = 
+\lim\limits_{x\rightarrow{+}\infty}\dfrac{\sqrt{x}}{\sqrt[6]{x^5}} = 
+\lim\limits_{x\rightarro{+}\infty} \dfrac{1}{\sqrt[3]{x}} = 0.  
+$$
+Отсюда, $f(x)$ =$o$($g(x)$), то есть функия $f(x)$ бесконечно малая относительно функции $g(x)$ при  $x\rightarrow{+}\infty.
